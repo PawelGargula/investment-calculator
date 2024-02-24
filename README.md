@@ -1,1 +1,1 @@
-# Invenstment calculator
+# Investment calculator

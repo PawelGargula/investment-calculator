@@ -3,7 +3,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1>Invenstment calculator</h1>
+      <h1>Investment calculator</h1>
     </>
   )
 }
