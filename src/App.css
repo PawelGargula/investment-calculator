@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-block: .4rem;
+}
+
+.inputs {
+    padding: .4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input input {
+    width: 6rem;
+    padding: .1rem .6rem;
+}
