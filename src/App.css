@@ -1,4 +1,5 @@
-h1 {
+h1,
+h2 {
     text-align: center;
 }
 
@@ -6,25 +7,32 @@ h2 {
     margin-block: .4rem;
 }
 
-.inputs {
+.texts {
     display: flex;
     flex-direction: column;
     gap: .6rem;
     padding: .4rem 1rem;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.input {
+.text {
     display: flex;
+    font-size: 1rem;
     justify-content: space-between;
 }
 
-.input input {
+.text input {
     width: 6rem;
     padding: .1rem .6rem;
 }
 
-h3 {
-    font-size: 1rem;
-    margin-block: .6rem;
-    padding-inline: 1rem;
+p {
+    margin: 0;
+}
+
+.text .currency {
+    margin: 0;
+    font-family: monospace, monospace;
+    font-weight: bold;
 }

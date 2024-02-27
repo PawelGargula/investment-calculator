@@ -45,8 +45,8 @@ function App() {
     <>
       <h1>Investment calculator</h1>
       <h2>Entering</h2>
-      <div className='inputs'>
-        <div className="input">
+      <div className='texts'>
+        <div className="text">
           <label htmlFor="annual-percentage-rate">Annual percentage rate:</label>
           <input 
             defaultValue={annualPercentageRate}
@@ -58,7 +58,7 @@ function App() {
             type="number" 
           />
         </div>
-        <div className="input">
+        <div className="text">
           <label htmlFor="deposits-within-one-year">Deposits within one year:</label>
           <input 
             defaultValue={depositsWithinOneYear}
@@ -70,7 +70,7 @@ function App() {
             type="number" 
           />
         </div>
-        <div className="input">
+        <div className="text">
           <label htmlFor="one-time-deposit">One-time deposit:</label>
           <input 
             defaultValue={onetimeDeposit}
@@ -82,7 +82,7 @@ function App() {
             type="number" 
           />
         </div>
-        <div className="input">
+        <div className="text">
           <label htmlFor="deposit-fee">Deposit fee:</label>
           <input 
             defaultValue={depositFee}
@@ -94,7 +94,7 @@ function App() {
             type="number" 
           />
         </div>
-        <div className="input">
+        <div className="text">
           <label htmlFor="investment-duration-in-years">Investment duration in years:</label>
           <input 
             defaultValue={investmentDurationInYears}
@@ -106,7 +106,7 @@ function App() {
             type="number" 
           />
         </div>
-        <div className="input">
+        <div className="text">
           <label htmlFor="initial-deposit">Initial deposit:</label>
           <input 
             defaultValue={initialDeposit}
@@ -122,11 +122,28 @@ function App() {
       <div>
         <h2>Result</h2>
         <InvestmentChart data={chartData}/>
-        <h3>Final balance: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(investmentSum.toFixed(2))}</h3>
-        <h3>Deposit: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(depositSum.toFixed(2))}</h3>
-        <h3>Profit: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(realProfitSum)}</h3>
-        <h3>Tax (19%): {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(taxSum)}</h3>
-        <h3>Fee: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(feeSum)}</h3>
+        <div className="texts">
+          <p className='text'>
+            <span>Final balance:</span>
+            <span className='currency'>{new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(investmentSum.toFixed(2))}</span>  
+          </p>
+          <p className='text'>
+            <span>Deposit:</span>
+            <span className='currency'>{new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(depositSum.toFixed(2))}</span>  
+          </p>
+          <p className='text'>
+            <span>Profit:</span>
+            <span className='currency'>{new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(realProfitSum)}</span>  
+          </p>
+          <p className='text'>
+            <span>Tax (19%):</span>
+            <span className='currency'>{new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(taxSum)}</span>  
+          </p>
+          <p className='text'>
+            <span>Fee:</span>
+            <span className='currency'>{new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(feeSum)}</span>  
+          </p>
+        </div>
       </div>
     </>
   )
