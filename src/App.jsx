@@ -41,11 +41,6 @@ function App() {
       }
   }
 
-  investmentSum = investmentSum.toFixed(2);
-  console.log(depositSum);
-  console.log(profitSum);
-  console.log(feeSum);
-
   return (
     <>
       <h1>Investment calculator</h1>
@@ -126,8 +121,12 @@ function App() {
       </div>
       <div>
         <h2>Result</h2>
-        <h3>Ending balance: {investmentSum}</h3>
         <InvestmentChart data={chartData}/>
+        <h3>Final balance: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(investmentSum.toFixed(2))}</h3>
+        <h3>Deposit: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(depositSum.toFixed(2))}</h3>
+        <h3>Profit: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(realProfitSum)}</h3>
+        <h3>Tax (19%): {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(taxSum)}</h3>
+        <h3>Fee: {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(feeSum)}</h3>
       </div>
     </>
   )
