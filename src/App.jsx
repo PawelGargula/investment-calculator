@@ -44,85 +44,88 @@ function App() {
   return (
     <>
       <h1>Investment calculator</h1>
-      <h2>Entering</h2>
-      <div className='texts'>
-        <div className="text">
-          <label htmlFor="annual-percentage-rate">Annual percentage rate:</label>
-          <input 
-            defaultValue={annualPercentageRate}
-            id="annual-percentage-rate" 
-            min={0} 
-            name="annual-percentage-rate" 
-            onChange={(e) => setAnnualPercentageRate(parseFloat(e.target.value))} 
-            step={.1} 
-            type="number" 
-          />
-        </div>
-        <div className="text">
-          <label htmlFor="deposits-within-one-year">Deposits within one year:</label>
-          <input 
-            defaultValue={depositsWithinOneYear}
-            id="deposits-within-one-year" 
-            min={0} 
-            name="deposits-within-one-year" 
-            onChange={(e) => setDepositsWithinOneYear(parseInt(e.target.value))} 
-            step={1}
-            type="number" 
-          />
-        </div>
-        <div className="text">
-          <label htmlFor="one-time-deposit">One-time deposit:</label>
-          <input 
-            defaultValue={onetimeDeposit}
-            id="one-time-deposit" 
-            min={0} 
-            name="one-time-deposit" 
-            onChange={(e) => setOnetimeDeposit(parseFloat(e.target.value))} 
-            step={50}
-            type="number" 
-          />
-        </div>
-        <div className="text">
-          <label htmlFor="deposit-fee">Deposit fee:</label>
-          <input 
-            defaultValue={depositFee}
-            id="deposit-fee" 
-            min={0} 
-            name="deposit-fee" 
-            onChange={(e) => setDepositFee(parseFloat(e.target.value))} 
-            step={0.1}
-            type="number" 
-          />
-        </div>
-        <div className="text">
-          <label htmlFor="investment-duration-in-years">Investment duration in years:</label>
-          <input 
-            defaultValue={investmentDurationInYears}
-            id="investment-duration-in-years" 
-            min={1} 
-            name="investment-duration-in-years" 
-            onChange={(e) => setInvestmentDurationInYears(parseInt(e.target.value))} 
-            step={1}
-            type="number" 
-          />
-        </div>
-        <div className="text">
-          <label htmlFor="initial-deposit">Initial deposit:</label>
-          <input 
-            defaultValue={initialDeposit}
-            id="initial-deposit" 
-            min={0} 
-            name="initial-deposit" 
-            onChange={(e) => setInitialDeposit(parseFloat(e.target.value))} 
-            step={50}
-            type="number" 
-          />
+      
+      <div className='md-width-50'>
+        <div className='texts md-margin-right'>
+          <h2>Entering</h2>
+          <div className="text">
+            <label htmlFor="annual-percentage-rate">Annual percentage rate:</label>
+            <input 
+              defaultValue={annualPercentageRate}
+              id="annual-percentage-rate" 
+              min={0} 
+              name="annual-percentage-rate" 
+              onChange={(e) => setAnnualPercentageRate(parseFloat(e.target.value))} 
+              step={.1} 
+              type="number" 
+            />
+          </div>
+          <div className="text">
+            <label htmlFor="deposits-within-one-year">Deposits within one year:</label>
+            <input 
+              defaultValue={depositsWithinOneYear}
+              id="deposits-within-one-year" 
+              min={0} 
+              name="deposits-within-one-year" 
+              onChange={(e) => setDepositsWithinOneYear(parseInt(e.target.value))} 
+              step={1}
+              type="number" 
+            />
+          </div>
+          <div className="text">
+            <label htmlFor="one-time-deposit">One-time deposit:</label>
+            <input 
+              defaultValue={onetimeDeposit}
+              id="one-time-deposit" 
+              min={0} 
+              name="one-time-deposit" 
+              onChange={(e) => setOnetimeDeposit(parseFloat(e.target.value))} 
+              step={50}
+              type="number" 
+            />
+          </div>
+          <div className="text">
+            <label htmlFor="deposit-fee">Deposit fee:</label>
+            <input 
+              defaultValue={depositFee}
+              id="deposit-fee" 
+              min={0} 
+              name="deposit-fee" 
+              onChange={(e) => setDepositFee(parseFloat(e.target.value))} 
+              step={0.1}
+              type="number" 
+            />
+          </div>
+          <div className="text">
+            <label htmlFor="investment-duration-in-years">Investment duration in years:</label>
+            <input 
+              defaultValue={investmentDurationInYears}
+              id="investment-duration-in-years" 
+              min={1} 
+              name="investment-duration-in-years" 
+              onChange={(e) => setInvestmentDurationInYears(parseInt(e.target.value))} 
+              step={1}
+              type="number" 
+            />
+          </div>
+          <div className="text">
+            <label htmlFor="initial-deposit">Initial deposit:</label>
+            <input 
+              defaultValue={initialDeposit}
+              id="initial-deposit" 
+              min={0} 
+              name="initial-deposit" 
+              onChange={(e) => setInitialDeposit(parseFloat(e.target.value))} 
+              step={50}
+              type="number" 
+            />
+          </div>
         </div>
       </div>
-      <div>
+      <div className='md-width-50'>
         <h2>Result</h2>
         <InvestmentChart data={chartData}/>
-        <div className="texts">
+        <div className="texts summary">
           <p className='text'>
             <span>Final balance:</span>
             <span className='currency'>{new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(investmentSum.toFixed(2))}</span>  
