@@ -6,7 +6,7 @@ import InvestmentData from './models/investment-data';
 function App() {
   const [annualPercentageRate, setAnnualPercentageRate] = useState(6.4);
   const [depositsWithinOneYear, setDepositsWithinOneYear] = useState(4);
-  const [onetimeDeposit, setOnetimeDeposit] = useState(2000);
+  const [onetimeDeposit, setOnetimeDeposit] = useState(1500);
   const [depositFee, setDepositFee] = useState(14);
   const [investmentDurationInYears, setInvestmentDurationInYears] = useState(10);
   const [initialDeposit, setInitialDeposit] = useState(0);
@@ -46,7 +46,7 @@ function App() {
       <h1>Investment calculator</h1>
       
       <div className='md-width-50'>
-        <div className='texts md-margin-right'>
+        <div className='texts entering md-margin-right'>
           <h2>Entering</h2>
           <div className="text">
             <label htmlFor="annual-percentage-rate">Annual percentage rate:</label>
