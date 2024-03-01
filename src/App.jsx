@@ -55,7 +55,8 @@ function App() {
               id="annual-percentage-rate" 
               min={0} 
               name="annual-percentage-rate" 
-              onChange={(e) => setAnnualPercentageRate(parseFloat(e.target.value))} 
+              onChange={(e) => setAnnualPercentageRate(e.target.value.trim().length === 0 ? 0 : parseFloat(e.target.value))
+              }
               step={.1} 
               type="number" 
             />
@@ -67,7 +68,7 @@ function App() {
               id="deposits-within-one-year" 
               min={0} 
               name="deposits-within-one-year" 
-              onChange={(e) => setDepositsWithinOneYear(parseInt(e.target.value))} 
+              onChange={(e) => setDepositsWithinOneYear(parseInt(e.target.value.trim().length === 0 ? 0 : e.target.value))} 
               step={1}
               type="number" 
             />
@@ -79,7 +80,7 @@ function App() {
               id="one-time-deposit" 
               min={0} 
               name="one-time-deposit" 
-              onChange={(e) => setOnetimeDeposit(parseFloat(e.target.value))} 
+              onChange={(e) => setOnetimeDeposit(parseFloat(e.target.value.trim().length === 0 ? 0 : e.target.value))} 
               step={50}
               type="number" 
             />
@@ -91,7 +92,7 @@ function App() {
               id="deposit-fee" 
               min={0} 
               name="deposit-fee" 
-              onChange={(e) => setDepositFee(parseFloat(e.target.value))} 
+              onChange={(e) => setDepositFee(parseFloat(e.target.value.trim().length === 0 ? 0 : e.target.value))} 
               step={0.1}
               type="number" 
             />
@@ -103,7 +104,7 @@ function App() {
               id="investment-duration-in-years" 
               min={1} 
               name="investment-duration-in-years" 
-              onChange={(e) => setInvestmentDurationInYears(parseInt(e.target.value))} 
+              onChange={(e) => setInvestmentDurationInYears(e.target.value.trim().length === 0 ? 0 : parseInt(e.target.value))} 
               step={1}
               type="number" 
             />
@@ -115,7 +116,7 @@ function App() {
               id="initial-deposit" 
               min={0} 
               name="initial-deposit" 
-              onChange={(e) => setInitialDeposit(parseFloat(e.target.value))} 
+              onChange={(e) => setInitialDeposit(e.target.value.trim().length === 0 ? 0 : parseFloat(e.target.value))} 
               step={50}
               type="number" 
             />
